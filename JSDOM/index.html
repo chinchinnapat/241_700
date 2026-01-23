@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ชื่อ: <input id="fname" class="input" type="text" name="fname" value="ทดสอบ">
+    นามสกุล: <input id="lname" class="input" type="text" name="lname" value="ทดสอบ">
+    เบอร์โทร: <input id="phone" class="input" type="text" name="phone" value="0999999999"> -->
+    
+    <!-- งานอดิเรก: 
+    <input type="checkbox" name="fname" value="ฟุตบอล">ฟุตบอล
+    <input type="checkbox" name="fname" value="บาสเกตบอล">บาสเกตบอล
+    <input type="checkbox" name="fname" value="ว่ายน้ำ">ว่ายน้ำ -->
+
+    <!-- <button onclick="userClick()">Click me</button>
+    <div onclick="divClick()">Click div</div> -->
+
+    <input type="radio" name="gender" value="Male" onchange="changeGender()">Male
+    <input type="radio" name="gender" value="Female" onchange="changeGender()">Female
+    <script>
+        function changeGender(){
+            let inputGenders = document.querySelectorAll('input[name="gender"]');
+            for(let i=0;i<inputGenders.length;i++){
+                if (inputGenders[i].checked){
+                    console.log('Gender selected = ' + inputGenders[i].value)
+                }
+            }
+        }
+
+        // function userClick(){
+        //     console.log("Button was clicked")
+        // }
+        // function divClick(){
+        //     console.log("Div was clicked")
+        // }
+
+        // let inputs = document.querySelector('#fname');
+        // console.log(inputs)
+        // for(let i=0; i<inputs.length;i++){
+        //     console.log(inputs[i].value)
+        // }
+
+        //  let inputs = document.querySelector('input[name="fname"]');
+        //  console.log(inputs.value)
+
+        // let checkboxes = document.querySelectorAll('input[type="checkbox"]')
+        // console.log(checkboxes)
+        // for(let i=0 ; i<checkboxes.length; i++){
+        //     console.log(checkboxes[i].value)
+        // }
+
+        
+    </script>
+</body>
+</html>
