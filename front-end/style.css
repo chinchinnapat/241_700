@@ -1,0 +1,207 @@
+/* นำเข้าฟอนต์ภาษาไทยสวยๆ จาก Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap');
+
+/* --- ตั้งค่าตัวแปรสี (Color Palette: Warm Sunset) --- */
+:root {
+    --primary-gradient: linear-gradient(135deg, #ff7e5f, #feb47b); /* ไล่สีส้มพีช */
+    --primary-color: #ff7e5f;
+    --secondary-color: #feb47b;
+    --bg-color: #f9f3ee; /* สีพื้นหลังครีมอุ่นๆ */
+    --text-dark: #4a4238; /* สีน้ำตาลเข้มเกือบดำ */
+    --text-light: #7a7268; /* สีน้ำตาลเทา */
+    --input-bg: #faf8f6;
+    --shadow-sm: 0 5px 15px rgba(255, 126, 95, 0.15);
+    --shadow-md: 0 15px 35px rgba(255, 126, 95, 0.2);
+    --shadow-button: 0 10px 20px -10px rgba(255, 94, 58, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* เพิ่ม transition ให้ทุกอย่างขยับนุ่มนวล */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px 20px;
+    background-image: radial-gradient(circle at top left, #fff5ec, var(--bg-color)); /* เพิ่มมิติให้พื้นหลัง */
+}
+
+/* กล่องคอนเทนเนอร์หลัก */
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px; /* มุมโค้งมนมากขึ้น */
+    box-shadow: var(--shadow-md); /* เงาสีส้มฟุ้งๆ */
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px); /* (เผื่ออนาคต) ทำให้ดูโปร่งแสงนิดๆ */
+}
+
+/* --- ส่วนหัวข้อ --- */
+.header {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 35px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+/* สร้างเส้นขีดเส้นใต้แบบไล่สี */
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 10px;
+}
+
+/* --- การจัดวาง Layout --- */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.form-input {
+    margin-bottom: 25px;
+}
+
+/* ป้ายกำกับหน้าช่องกรอก */
+.header-form {
+    width: 90px;
+    font-weight: 500;
+    color: var(--text-dark);
+    flex-shrink: 0;
+    font-size: 16px;
+}
+
+/* --- ช่องกรอกข้อมูล (Input & Textarea) --- */
+.form, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid transparent; /* ซ่อนขอบไว้ก่อน */
+    background-color: var(--input-bg);
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--text-dark);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); /* เงาด้านในเล็กน้อย */
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+    margin-top: 10px;
+    display: block; /* แก้ให้ textarea ลงมาอยู่บรรทัดใหม่ตามภาพ */
+}
+
+/* Effect เมื่อคลิกที่ช่องกรอก (Focus State) */
+.form:focus, textarea:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: var(--secondary-color); /* เปลี่ยนสีขอบ */
+    box-shadow: var(--shadow-sm); /* เพิ่มเงาให้ดูลอยขึ้น */
+    transform: translateY(-2px); /* ขยับขึ้นเล็กน้อย */
+}
+
+/* --- ส่วน Radio และ Checkbox --- */
+/* ใช้ accent-color เปลี่ยนสีปุ่มเลือก (Modern CSS) */
+input[type="radio"], input[type="checkbox"] {
+    accent-color: var(--primary-color);
+    transform: scale(1.2); /* ขยายให้ใหญ่ขึ้นนิดนึง */
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* จัดระยะห่างของตัวเลือก */
+.gender .flex {
+    gap: 20px;
+    flex-wrap: wrap; /* ถ้าจอเล็กให้ปัดลงมา */
+}
+
+/* ทำให้ตัวเลือกขยับได้เมื่อเอาเมาส์ชี้ */
+.gender .flex div, 
+.form-input > div:not(.header-form) {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 0;
+    color: var(--text-light);
+}
+
+.gender .flex div:hover, 
+.form-input > div:not(.header-form):hover {
+    color: var(--primary-color);
+    transform: translateX(5px); /* เลื่อนไปทางขวานิดๆ */
+}
+
+.form-input > div:not(.header-form) {
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+
+/* --- ปุ่มกด (Button 3D Pop-up) --- */
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.button {
+    /* พื้นหลังแบบไล่สี */
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 14px 45px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    /* เงาของปุ่ม */
+    box-shadow: var(--shadow-button);
+    position: relative;
+    overflow: hidden; /* สำหรับเอฟเฟกต์แสง */
+}
+
+/* Effect เมื่อเอาเมาส์ชี้ปุ่ม (Hover - ปุ่มนูนขึ้น) */
+.button:hover {
+    transform: translateY(-5px) scale(1.02); /* ลอยขึ้น + ขยายสเกลนิดนึง */
+    box-shadow: 0 20px 30px -10px rgba(255, 94, 58, 0.7); /* เงาเข้มขึ้นและลึกขึ้น */
+}
+
+/* Effect เมื่อกดปุ่ม (Active) */
+.button:active {
+    transform: translateY(-2px) scale(0.98); /* ยุบลงมานิดนึง */
+    box-shadow: var(--shadow-button); /* เงากลับไปเหมือนเดิม */
+}
+
+/* เพิ่มเอฟเฟกต์แสงแวบๆ ผ่านปุ่ม (Optional) */
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.6s;
+}
+.button:hover::before {
+    left: 100%; /* เลื่อนแสงผ่านปุ่ม */
+}
