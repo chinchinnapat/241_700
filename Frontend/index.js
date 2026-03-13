@@ -64,11 +64,11 @@ const submitData = async () => {
     } catch (error) {
         console.log('error message', error.message);
         console.log('error', error.errors);
-
         if (error.response) {
-            console.log('Error response:', error.response);
-            error.message = error.response.data.message
-            error.errors = error.response.data.errors
+            console.log('error response', error.response);
+            error.message = error.response.data.message;
+            error.errors = error.response.data.errors;
+
         }
 
         let htmlData = '<div>'
