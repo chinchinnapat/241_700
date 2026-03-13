@@ -1,0 +1,98 @@
+/* Layout หลัก */
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* Header */
+.header {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #222;
+}
+
+/* Form input */
+.form-input {
+  margin-bottom: 20px;
+}
+
+.header-form {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.form:focus, textarea:focus {
+  border-color: #4CAF50;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.2);
+}
+
+/* Textarea (Description) */
+textarea {
+  min-height: 100px;
+  resize: none; /* ปิดการขยาย */
+}
+
+.center {
+  display: flex;
+  justify-content: center; /* จัดให้อยู่ตรงกลางแนวนอน */
+  margin-top: 20px;
+}
+
+
+
+/* Button */
+.button {
+  background: linear-gradient(135deg, #4CAF50, #2e7d32);
+  color: white;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Message */
+.message {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.message.danger {
+  background: #ffebee;
+  color: #c62828;
+}
